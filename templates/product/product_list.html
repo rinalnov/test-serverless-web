@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h1>List Products</h1>
+    {% if result %}
+        <table class="list">
+            <tr>
+                <th> Product ID</th>
+                <th> Name</th>
+                <th> JAN</th>
+                <th> LOT</th>
+            </tr>
+        {% for item in result %}
+            <tr>
+                <td> {{ item['ID'] }} </td>
+                <td>{{ item['Name'] }}</td>
+                <td> {{ item['JAN'] }} </td>
+                <td> {{ item['LOT'] }} </td>
+            </tr>
+        {% endfor %}
+        </table>
+    {% else %}
+        <h5>There is no product exist, please add product for this company</h5>
+    {% endif %}
+
+    <a href="{{ url_for('addProductForm', companyName = companyName)}}" class="add-link">Add Product</a>
+{% endblock %}  

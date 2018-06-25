@@ -1,0 +1,15 @@
+{
+    "dev": {
+        "app_function": "route.app",
+        "aws_region": "us-east-1",
+        "profile_name": "default",
+        "project_name": "flask-sample",
+        "runtime": "python3.6",
+        "s3_bucket": "flask-zappa-sample-project",
+        "environment_variables": {
+            "tbUser" : "tbUsers3",
+            "poolID" : "us-east-1_PqI7vgPYC",
+            "cognitoAppClientID" : "70uonffglttpu0juiu5p8spom0"
+        }
+    }
+}

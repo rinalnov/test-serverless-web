@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %} Login {% endblock %}
+<!--{% block head %} {% endblock %}-->
+{% block content %}
+    <div class="form-wrapper">
+        <h1 class="header">Welcome to SLS sample</h1>
+        <h4>Login? please enter your information</h4>
+        <form action="{{ url_for('submitLogin') }}" method="POST" name="submit_login">
+            <dl>
+            <dd> <input type="text" placeholder="User Name" name="username"/> </dd>
+            <dd><input type="password" placeholder="Password at lease 6 digits" name="password"/> </dd>
+            <dd><input type="Submit" class="button"> <input type="reset" class="button"></dd>
+            </dl>
+        </form>
+        <a href="{{ url_for('register') }}" class="register-link">Go to register page</a>
+    </div>
+{% endblock %}
+

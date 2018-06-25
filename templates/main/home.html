@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h1>Company List</h1>
+    <table class="list">
+        <tr>
+            <th> Company ID</th>
+            <th> Company Name</th>
+            <th> Address</th>
+            <th> Action</th>
+        </tr>
+    {% for item in result %}
+        <tr>
+            <td> {{ item.sub }} </td>
+            {% set companyName = item._data.get('custom:group_name') %}
+            <td>{{ item.name }}</td>
+            <td> {{ item.address }} </td>
+            <td> 
+                <a href="{{ url_for('listStoreCompany', companyName='')}}{{ companyName }}">List stores </a>
+                <a href="{{ url_for('listProduct', companyName='')}}{{ companyName }}">List products </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}  

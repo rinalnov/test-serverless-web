@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h2>Profile</h2>
+    <table>
+    {% for item in result %}
+        <tr>
+            <th> user name :</th>
+            <td> {{ item.email }} </td>
+        </tr>
+    {% endfor %}
+    </table>
+    <p>
+        result = 
+        {{ result }}
+    </p>
+{% endblock %}

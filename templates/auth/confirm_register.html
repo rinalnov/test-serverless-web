@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block title %} Confirm Registration {% endblock %}
+{% block content %}
+    <div class="form-wrapper">
+        <h1 class="header">Confirm Registration</h1>
+        <h5>please enter verification code sent to your email</h5>
+        <form action="{{ url_for('verifyRegister') }}" method="post" name="submit_register">
+            <dt>
+                {% if name %}
+                <input type="text" placeholder="Verification Code" name="username" value={{name}} hidden/>
+                {% endif %}
+                <input type="number" placeholder="Verification Code" name="code"/>
+                <dd><input type="Submit" class="button"> <input type="reset" class="button"></dd>
+            </dt>
+        </form>
+    </div>
+{% endblock %}

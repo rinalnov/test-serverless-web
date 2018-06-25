@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!--<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">-->
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    {% block head %}
+        <title>{% block title %} {% endblock %}</title>
+        <!--<link rel="stylesheet" href="css/styles.css"/>-->
+
+    {% endblock %}
+</head>
+<body>
+    <div id="content">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+
+    <div id="footer">
+        {% block footer %}
+            <p>&copy; Copyright 2018 by Rise UP Inc.</p>
+        {% endblock %}
+    </div>
+</body>
+</html>

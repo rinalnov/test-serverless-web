@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %} Login {% endblock %}
+<!--{% block head %} {% endblock %}-->
+{% block content %}
+    <div class="form-wrapper">
+        <h1 class="header">Welcome ...</h1>
+        <h4>please enter your information</h4>
+        <form action="{{ url_for('submitRegister') }}" method="post" name="submit_register">
+            <dt>
+            <dd><input type="text" placeholder="Name" name="name"/></dd>
+            <dd><input type="email" placeholder="Email" name="email"/></dd>
+            <dd><input type="tel" placeholder="Phone" name="phone"/></dd>
+            <dd><input type="password" placeholder="Password at lease 6 digits" name="password"/></dd>
+            <dd><input type="text" placeholder="Address" name="address"/></dd>
+            <dd><input type="Submit" class="button"> <input type="reset" class="button"></dd>
+            </dt>
+        </form>
+    </div>
+{% endblock %}
