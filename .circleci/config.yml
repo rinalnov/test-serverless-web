@@ -55,4 +55,17 @@ jobs:
       - store_artifacts:
           path: test-reports
           destination: test-reports
+
+deployment:
+  development:
+    branch: develop
+    commands:
+      source bin/activate
+      zappa update
+
+  staging:
+    branch: release
+    commands:
+      source bin/activate
+      zappa update
           
