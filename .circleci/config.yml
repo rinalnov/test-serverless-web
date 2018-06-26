@@ -49,6 +49,7 @@ jobs:
           command: |
             . venv/bin/activate
             nosetests tests/usermodel-test.py
+            coverage run src/*.py && coverage report
             # python3 usermodel.py test
 
       - store_artifacts:
