@@ -8,9 +8,8 @@ import uuid
 import os
 import json
 
-
-
 app = Flask(__name__,static_folder='static')
+
 def cognitoConfig(argUsername = ""):
     # poolID = os.environ['poolID']
     # cognitoAppClientID = os.environ['cognitoAppClientID']
@@ -20,13 +19,12 @@ def cognitoConfig(argUsername = ""):
     else : 
         # config = Cognito(poolID,cognitoAppClientID)
         config = Cognito("us-east-1_PqI7vgPYC","70uonffglttpu0juiu5p8spom0")
-
     return config
 
 @app.route('/')
 def index():
-    cognitoConnection = cognitoConfig() 
-    userData = cognitoConnection.get_users()
+    # cognitoConnection = cognitoConfig() 
+    # userData = cognitoConnection.get_users()
     # for item in userData:
     #     data = item._data
     #     data2 = item.__dict__
@@ -35,8 +33,8 @@ def index():
     # group_data = {'GroupName': 'Company', 'Description': 'Company','Precedence': None}
     # group = cognitoConnection.get_group(group_name='Company')
     # print(group.__dict__)
-
-    return render_template("/main/home.html", result = userData)
+    # return render_template("/main/home.html", result = userData)
+    return redirect(url_for('login'))
 
 @app.route('/login')
 def login():
