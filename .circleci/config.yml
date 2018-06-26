@@ -48,7 +48,8 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            python3 usermodel.py test
+            nosetests tests/usermodel-test.py
+            # python3 usermodel.py test
 
       - store_artifacts:
           path: test-reports
