@@ -34,7 +34,8 @@ def index():
     # group = cognitoConnection.get_group(group_name='Company')
     # print(group.__dict__)
     # return render_template("/main/home.html", result = userData)
-    return redirect(url_for('login'))
+    # return redirect(url_for('login'))
+    return "Hello Home!!!"
 
 @app.route('/login')
 def login():
